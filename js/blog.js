@@ -1,7 +1,8 @@
 // Blog list page (and "Latest news" on the home page).
 (function () {
   function card(p) {
-    return '<div class="blog-card"><h3><a href="blog.html">' + JS.esc(p.title) + '</a></h3>' +
+    var href = p.content_html ? 'post.html?slug=' + encodeURIComponent(p.slug) : 'blog.html';
+    return '<div class="blog-card"><h3><a href="' + href + '">' + JS.esc(p.title) + '</a></h3>' +
       '<div class="date">' + JS.fmtDate(p.date) + '</div><p>' + JS.esc(p.excerpt) + '</p></div>';
   }
   window.renderBlog = function (targetId, limit, perPage) {
