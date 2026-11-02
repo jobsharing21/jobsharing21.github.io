@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homepage - JobSharing</title>
+<meta name="description" content="JobSharing helps people find jobs in Cork, Ireland.">
+<link rel="icon" href="wp-content/uploads/2016/01/logo5.png">
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SVJ5B8HEQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1SVJ5B8HEQ');</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1756511142277750" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<section class="hero" id="hero">
+  <div class="hero-slides" aria-hidden="true">
+    <div class="hero-slide active" style="background-image:url('wp-content/uploads/2016/01/slide-one-2x-1170x400.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('wp-content/uploads/2016/01/slide-one-2x32-1170x400.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('wp-content/uploads/2016/01/slide-one-3x-1170x400.jpg')"></div>
+  </div>
+  <div class="hero-content">
+    <h1>Find A New Way to A Better Life</h1>
+    <div class="line"></div>
+    <p>Where Your Dreams Come TRUE!</p>
+    <a class="btn" href="jobs.html">Get started now</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Latest jobs</h2>
+    <div class="center" style="margin-top:20px"><a class="btn btn-outline" href="jobs.html">See all jobs</a></div>
+    <div id="home-jobs" class="job-list" style="margin-top:24px"></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services">
+      <div class="service"><div class="icon">&#9998;</div><h3>Content Writing, Cover Letters &amp; Translation Services</h3><p>Boost your online presence and let recruiters find you more easily. Take advantage of our FREE trial cover letters service by referring one of your friends to our website!</p><p><a href="supports.html">(more...)</a></p></div>
+      <div class="service"><div class="icon">&#9634;</div><h3>CV Writing Service</h3><p>Have your CV written by one of our specialists. Need a professional to give an honest opinion on your CV? Take advantage of our FREE CV Review service by referring one of your friends to our website!</p><p><a href="supports.html">(more...)</a></p></div>
+      <div class="service"><div class="icon">in</div><h3>LinkedIn Profiles Service</h3><p>Boost your online presence and let recruiters find you more easily. Take advantage of our FREE trial LinkedIn service by referring one of your friends to our website!</p><p><a href="supports.html">(more...)</a></p></div>
+      <div class="service"><div class="icon">&#9776;</div><h3>CV Consultation Service</h3><p>Need a professional to give an honest opinion on your CV? Take advantage of our FREE CV Review service by referring one of your friends to our website!</p><p><a href="supports.html">(more...)</a></p></div>
+      <div class="service"><div class="icon">&lt;/&gt;</div><h3>Deluxe Web Design &ndash; starting at $199.99</h3><p>Looking for something special. We can assist you with a variety of web applications to meet your needs, starting at $199.99. Have an idea for what you want your site to look like?</p><p><a href="supports.html">(more...)</a></p></div>
+      <div class="service"><div class="icon">&#127760;</div><h3>Standard Design Package &ndash; starting at $99.99</h3><p>A website created using our standard layout customized with your information and images. This is not a template &ndash; your site will look just as you want it to and can be customized to meet your needs.</p><p><a href="supports.html">(more...)</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="explore">
+  <h2>Find about what we're all about</h2>
+  <div class="explore-row">
+    <div><p>Take some time and meet our employees</p><a class="btn btn-outline" style="background:transparent" href="team.html">Meet the team</a></div>
+    <div><p>Review some facts about us</p><a class="btn btn-outline" style="background:transparent" href="about.html">Facts</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Latest news</h2>
+    <div id="home-news" class="news-grid" style="margin-top:30px"></div>
+  </div>
+</section>
+
+<section class="section newsletter-band">
+  <div class="container" style="max-width:520px">
+    <div id="home-newsletter"></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/common.js"></script>
+<script src="js/blog.js"></script>
+<script>
+  (function () {
+    var slides = document.querySelectorAll(".hero-slide"), i = 0;
+    if (slides.length > 1) setInterval(function () {
+      slides[i].classList.remove("active"); i = (i + 1) % slides.length; slides[i].classList.add("active");
+    }, 5000);
+  })();
+  document.addEventListener("DOMContentLoaded", function () {
+    JS.mountLayout("home");
+    document.getElementById("home-newsletter").innerHTML = JS.newsletterBox();
+    renderBlog("home-news", 3, 3);
+    JS.fetchJSON("data/jobs.json").then(function (jobs) {
+      document.getElementById("home-jobs").innerHTML = jobs.slice(0, 6).map(JS.jobCard).join("");
+    }).catch(function () {
+      document.getElementById("home-jobs").innerHTML = '<p class="empty">Jobs could not be loaded.</p>';
+    });
+  });
+</script>
+</body>
+</html>

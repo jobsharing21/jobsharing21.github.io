@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us - JobSharing</title>
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SVJ5B8HEQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1SVJ5B8HEQ');</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1756511142277750" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main class="section" style="padding-top:40px">
+  <div class="container contact-grid">
+    <div>
+      <h2>Requests. Questions. Comments.</h2>
+      <p class="muted">Do you have any questions, requests or comments? We'll be delighted to answer you.</p>
+      <!-- Static sites cannot receive form posts by themselves. Replace the action below with a free form service
+           (for example Formspree: https://formspree.io/ ) and put your form ID in place of YOUR_FORM_ID. -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row"><label for="name">Your Name (required)</label><input id="name" name="name" type="text" required></div>
+        <div class="form-row"><label for="email">Your Email (required)</label><input id="email" name="email" type="email" required></div>
+        <div class="form-row"><label for="subject">Subject</label><input id="subject" name="subject" type="text"></div>
+        <div class="form-row"><label for="message">Your Message</label><textarea id="message" name="message"></textarea></div>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+    <aside>
+      <p class="muted" style="font-style:italic">"I just wanted to say a big thank you to Job Sharing customer supports team, for their assistance with our job posting and advertisements which turned out to be a wonderful success due to the hard work ethic and great professional approach to our company."</p>
+      <p class="center"><img src="wp-content/uploads/2016/01/Breda-Wright-200x245.jpg" alt="Breda Wright" style="width:90px;height:90px;object-fit:cover;border-radius:50%"><br><strong style="color:var(--red)">Breda Wright</strong><br><span class="muted" style="font-size:13px">Manager of Tesco Ireland</span></p>
+    </aside>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/common.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () { JS.mountLayout("contact"); });</script>
+</body>
+</html>

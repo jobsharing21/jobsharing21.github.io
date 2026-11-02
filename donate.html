@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Job Sharing Donation - JobSharing</title>
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SVJ5B8HEQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1SVJ5B8HEQ');</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1756511142277750" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main class="section" style="padding-top:40px">
+  <div class="container donate-grid">
+    <div>
+      <img src="images/donationjob.jpg" alt="Donations jar" style="width:100%;max-width:450px;height:auto;display:block">
+    </div>
+    <div>
+      <h1>Job Sharing Donation</h1>
+      <p class="muted">JobSharing as a non-profit organization is proud to be part of the Cork community, providing a job search platform to people from all walks of life and from all over Cork, Ireland.</p>
+      <p>Job Sharing helps people to find their dream jobs and is run entirely on donations from several different organizations, individuals and corporations. For a few years, Job Sharing has helped dozens of people to land their dream jobs in Cork, Ireland.</p>
+      <p>If you like our idea, blog posts, and job alerts on our website, please donate to keep our work going.</p>
+      <h3 style="margin-top:24px">Choose an amount (&euro;)</h3>
+      <div class="amount-presets">
+        <button type="button" data-amt="1">&euro;1</button>
+        <button type="button" data-amt="5">&euro;5</button>
+        <button type="button" data-amt="10">&euro;10</button>
+        <button type="button" data-amt="20">&euro;20</button>
+      </div>
+      <div class="amount-box"><span>&euro;</span><input id="amount" type="number" min="1" step="0.5" value="5"></div>
+      
+      <a class="btn" id="donate-btn" href="https://paypal.me/jobsharing21" target="_blank" rel="noopener">Donate now</a>
+      <p class="placeholder-note" style="margin-top:14px">Donations go through the payment provider's own page. JobSharing does not store payment details.</p>
+    </div>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/common.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    JS.mountLayout("donate");
+    var amt = document.getElementById("amount");
+    document.querySelectorAll("[data-amt]").forEach(function (b) {
+      b.addEventListener("click", function () { amt.value = b.getAttribute("data-amt"); });
+    });
+  });
+</script>
+</body>
+</html>
